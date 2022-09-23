@@ -6,7 +6,7 @@ using System;
 
 namespace DeviceManagement_WebApp.Repository
 {
-    public class GenericRepository <T> where T : class
+    public class GenericRepository<T> : IGenericRepository <T> where T : class
     {
         protected readonly ConnectedOfficeContext _context;
         public GenericRepository(ConnectedOfficeContext context)
