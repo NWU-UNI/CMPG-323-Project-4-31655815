@@ -1,6 +1,9 @@
-﻿namespace DeviceManagement_WebApp.Repository
+﻿using DeviceManagement_WebApp.Models;
+
+namespace DeviceManagement_WebApp.Repository
 {
     public interface IDeviceRepository
     {
+        Zone GetMostRecentDevice();
     }
 }

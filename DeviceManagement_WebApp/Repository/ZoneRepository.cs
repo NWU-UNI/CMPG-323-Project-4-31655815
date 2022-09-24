@@ -1,5 +1,6 @@
 ﻿using DeviceManagement_WebApp.Data;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using System.Security.Policy;
 
 namespace DeviceManagement_WebApp.Repository
@@ -13,7 +14,7 @@ namespace DeviceManagement_WebApp.Repository
         Zone IZoneRepository.GetMostRecentZone()
         {
             throw new System.NotImplementedException();
-            //return DbContext.Zone.OrderByDescending(Zone => Zone.CreatedDate).FirstOrDefault();
+            //return _context.Zone.OrderByDescending(Zone => Zone.CreatedDate).FirstOrDefault();
         }
     }
 
