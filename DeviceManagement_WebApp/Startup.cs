@@ -42,7 +42,7 @@ namespace DeviceManagement_WebApp
             services.AddRazorPages();
 
             services.AddTransient(typeof(GenericRepository<>) , typeof(GenericRepository<>));
-
+            //services.AddTransient<ZoneRepository, IZoneRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

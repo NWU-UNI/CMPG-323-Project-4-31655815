@@ -1,16 +1,23 @@
-﻿namespace DeviceManagement_WebApp.Repository
+﻿using DeviceManagement_WebApp.Data;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Policy;
+
+namespace DeviceManagement_WebApp.Repository
 {
     public class ZoneRepository : GenericRepository<Zone>, IZoneRepository
     {
-    }
-        public ServiceRepository(CMPG323Context context) : base(context)
+        public ZoneRepository(ConnectedOfficeContext context) : base(context)
         {
         }
 
-        public Zone GetMostRecentZone()
+        Zone IZoneRepository.GetMostRecentZone()
         {
-            return _context.Zone.OrderByDescending(Zone => Zone.CreatedDate).FirstOrDefault();
+            throw new System.NotImplementedException();
+            //return DbContext.Zone.OrderByDescending(Zone => Zone.CreatedDate).FirstOrDefault();
         }
-
-
     }
+
+
+
+
+}
