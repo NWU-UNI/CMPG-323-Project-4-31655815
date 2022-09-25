@@ -13,6 +13,9 @@ namespace DeviceManagement_WebApp.Repository
         {
             _context = context;
         }
+
+        public object Device { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public void Add(T entity)
         {
             _context.Set<T>().Add(entity);

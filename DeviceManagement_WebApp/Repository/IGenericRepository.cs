@@ -6,6 +6,8 @@ namespace DeviceManagement_WebApp.Repository
 {
     public interface IGenericRepository<T> where T : class
     {
+        object Device { get; set; }
+
         T GetById(int id);
         IEnumerable<T> GetAll();
         IEnumerable<T> Find(Expression<Func<T, bool>> expression);
