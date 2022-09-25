@@ -1,4 +1,5 @@
 using DeviceManagement_WebApp.Data;
+using DeviceManagement_WebApp.Models;
 using DeviceManagement_WebApp.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -41,10 +42,13 @@ namespace DeviceManagement_WebApp
             services.AddControllersWithViews();//test
             services.AddRazorPages();
 
-            services.AddTransient(typeof(GenericRepository<>) , typeof(GenericRepository<>));
-            //services.AddTransient<ZoneRepository, IZoneRepository>();
+            //services.AddTransient(typeof(GenericRepository<>) , typeof(GenericRepository<>));
+            //services.AddTransient<IZoneRepository, ZoneRepository>();
+            //services.AddTransient<IDeviceRepository, DeviceRepository>();
+            services.AddTransient<IGenericRepository<Zone>, GenericRepository<Zone>>();
+            services.AddTransient<IGenericRepository<Device>, GenericRepository<Device>>();
         }
-
+         
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
