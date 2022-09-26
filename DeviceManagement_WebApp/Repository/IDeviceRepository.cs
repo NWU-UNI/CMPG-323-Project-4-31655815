@@ -2,7 +2,7 @@
 
 namespace DeviceManagement_WebApp.Repository
 {
-    public interface IDeviceRepository
+    public interface IDeviceRepository : IGenericRepository<Device>
     {
         Device GetMostRecentDevice();
     }

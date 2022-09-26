@@ -10,10 +10,10 @@ namespace DeviceManagement_WebApp.Repository
         {
         }
 
-        Device IDeviceRepository.GetMostRecentDevice()
+        public Device  GetMostRecentDevice()
         {
-            throw new System.NotImplementedException();
-            //return _context.Device.OrderByDescending(Device => Device.CreatedDate).FirstOrDefault();
+            //throw new System.NotImplementedException();
+            return _context.Device.OrderByDescending(Device => Device.DateCreated).FirstOrDefault();
         }
     }
 

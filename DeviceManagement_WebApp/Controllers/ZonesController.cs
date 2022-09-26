@@ -13,26 +13,26 @@ namespace DeviceManagement_WebApp.Controllers
 {
     public class ZonesController : Controller
     {
-        private readonly ConnectedOfficeContext _context;
+        //private readonly ConnectedOfficeContext _context;
 
-        //private readonly IZoneRepository _ZoneRepository;
+        private readonly IZoneRepository _ZoneRepository;
         //public ZonesController(IZoneRepository ZoneRepository)
         //{
         //    _ZoneRepository = ZoneRepository;
         //}
 
-        public ZonesController(ConnectedOfficeContext context)
+        public ZonesController(IZoneRepository zoneRepository)
         {
-            _context = context;
+            _ZoneRepository = zoneRepository;
         }
 
-        // GET: Services
+      
 
 
         // GET: Zones
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Zone.ToListAsync());
+            return View(_ZoneRepository.GetAll());
         }
 
         // GET: Zones/Details/5
@@ -43,8 +43,7 @@ namespace DeviceManagement_WebApp.Controllers
                 return NotFound();
             }
 
-            var zone = await _context.Zone
-                .FirstOrDefaultAsync(m => m.ZoneId == id);
+            var zone = await _context.Zone.FirstOrDefaultAsync(m => m.ZoneId == id);
             if (zone == null)
             {
                 return NotFound();

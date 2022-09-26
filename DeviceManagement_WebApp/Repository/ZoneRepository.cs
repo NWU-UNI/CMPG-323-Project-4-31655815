@@ -1,4 +1,5 @@
 ﻿using DeviceManagement_WebApp.Data;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Security.Policy;
@@ -11,10 +12,11 @@ namespace DeviceManagement_WebApp.Repository
         {
         }
 
-        Zone IZoneRepository.GetMostRecentZone()
+        public Zone GetMostRecentZone()
         {
             throw new System.NotImplementedException();
-            //return _context.Zone.OrderByDescending(Zone => Zone.CreatedDate).FirstOrDefault();
+            //return _context.Zone.OrderByDescending(Device => Zone.ReferenceEquals).FirstOrDefault();
+            //return Zone ;
         }
 
         
