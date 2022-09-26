@@ -7,16 +7,17 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DeviceManagement_WebApp.Data;
 using DeviceManagement_WebApp.Models;
+using DeviceManagement_WebApp.Repository;
 
 namespace DeviceManagement_WebApp.Controllers
 {
     public class DevicesController : Controller
     {
-        private readonly ConnectedOfficeContext _context;
+        private readonly IDeviceRepository _DeviceRepository;
 
-        public DevicesController(ConnectedOfficeContext context)
+        public DevicesController(IDeviceRepository deviceRepository)
         {
-            _context = context;
+            _DeviceRepository = deviceRepository;
         }
 
         // GET: Devices

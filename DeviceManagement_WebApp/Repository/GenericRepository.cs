@@ -41,6 +41,11 @@ namespace DeviceManagement_WebApp.Repository
         {
             _context.Set<T>().RemoveRange(entities);
         }
+
+
+
+
+
     }
 }
 

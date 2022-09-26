@@ -7,16 +7,17 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DeviceManagement_WebApp.Data;
 using DeviceManagement_WebApp.Models;
+using DeviceManagement_WebApp.Repository;
 
 namespace DeviceManagement_WebApp.Controllers
 {
     public class CategoriesController : Controller
     {
-        private readonly ConnectedOfficeContext _context;
+        private readonly ICategory _CategoryRepository;
 
-        public CategoriesController(ConnectedOfficeContext context)
+        public CategoriesController(ICategory categoryRepository)
         {
-            _context = context;
+            _CategoryRepository = categoryRepository;
         }
 
         // GET: Categories

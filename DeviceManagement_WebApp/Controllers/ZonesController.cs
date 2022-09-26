@@ -13,13 +13,8 @@ namespace DeviceManagement_WebApp.Controllers
 {
     public class ZonesController : Controller
     {
-        //private readonly ConnectedOfficeContext _context;
 
         private readonly IZoneRepository _ZoneRepository;
-        //public ZonesController(IZoneRepository ZoneRepository)
-        //{
-        //    _ZoneRepository = ZoneRepository;
-        //}
 
         public ZonesController(IZoneRepository zoneRepository)
         {
@@ -43,7 +38,7 @@ namespace DeviceManagement_WebApp.Controllers
                 return NotFound();
             }
 
-            var zone = await _context.Zone.FirstOrDefaultAsync(m => m.ZoneId == id);
+            var zone = await _ZoneRepository.Zone.FirstOrDefaultAsync(m => m.ZoneId == id);
             if (zone == null)
             {
                 return NotFound();
