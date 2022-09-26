@@ -4,6 +4,6 @@ namespace DeviceManagement_WebApp.Repository
 {
     public interface IDeviceRepository
     {
-        Zone GetMostRecentDevice();
+        Device GetMostRecentDevice();
     }
 }

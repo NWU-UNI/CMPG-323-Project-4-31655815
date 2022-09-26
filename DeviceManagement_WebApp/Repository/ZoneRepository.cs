@@ -16,6 +16,8 @@ namespace DeviceManagement_WebApp.Repository
             throw new System.NotImplementedException();
             //return _context.Zone.OrderByDescending(Zone => Zone.CreatedDate).FirstOrDefault();
         }
+
+        
     }
 
 

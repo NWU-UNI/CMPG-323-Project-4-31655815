@@ -1,4 +1,5 @@
-﻿using System.Security.Policy;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Security.Policy;
 
 namespace DeviceManagement_WebApp.Repository
 {
@@ -6,6 +7,8 @@ namespace DeviceManagement_WebApp.Repository
     {
         Zone GetMostRecentZone();
     }
+
+    
 
 
 }

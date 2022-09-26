@@ -10,7 +10,7 @@ namespace DeviceManagement_WebApp.Repository
         {
         }
 
-        Zone IDeviceRepository.GetMostRecentDevice()
+        Device IDeviceRepository.GetMostRecentDevice()
         {
             throw new System.NotImplementedException();
             //return _context.Device.OrderByDescending(Device => Device.CreatedDate).FirstOrDefault();
