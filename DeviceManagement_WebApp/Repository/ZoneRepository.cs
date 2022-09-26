@@ -11,13 +11,16 @@ namespace DeviceManagement_WebApp.Repository
         public ZoneRepository(ConnectedOfficeContext context) : base(context)
         {
         }
+        //private readonly IGenericRepository<Zone> _ZoneRepository;
 
         public Zone GetMostRecentZone()
         {
             throw new System.NotImplementedException();
-            //return _context.Zone.OrderByDescending(Device => Zone.ReferenceEquals).FirstOrDefault();
-            //return Zone ;
+            //return _context.Zone.OrderByDescending(Device => Zone.DateCreated).FirstOrDefault();
+            
         }
+
+
 
         
     }

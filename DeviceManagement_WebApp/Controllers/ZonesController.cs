@@ -21,8 +21,8 @@ namespace DeviceManagement_WebApp.Controllers
             _ZoneRepository = zoneRepository;
         }
 
-      
 
+    
 
         // GET: Zones
         public async Task<IActionResult> Index()
