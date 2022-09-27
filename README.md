@@ -1,9 +1,10 @@
 # 31655815_P3_ConnectedOffice
 ## Table of contents
-* [General info](#general-info)
-* [Requirements](#Requirements)
 * [Setup](#setup)
 * [App (How To)](#App)
+* [General info](#general-info)
+* [Requirements](#Requirements)
+
 
 ## App (How To)
 * This App Gives you a Log In Screen where you can Regester or log in.
