@@ -11,11 +11,9 @@ requirements of the project.
 	
 ## Requirements
 # GitHub Administration
-*Create and Configure GitHub Repository
-*Create a ReadME.md file that will be 
-used to describe your project and 
-how stakeholders are to use the 
-report that you have developed
+* Create and Configure GitHub Repository
+* Create a ReadME.md file 
+
 
 Project Progress Ensure that the solution has been 
 committed and pushed to source 
