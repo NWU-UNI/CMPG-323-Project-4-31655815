@@ -16,5 +16,7 @@ namespace DeviceManagement_WebApp.Repository
         Task<object> ToListAsync();
         void Update(Models.Device device);
         object Include(Func<object, object> value);
+        Task FindAsync(Guid id);
+        bool Any(Func<object, bool> value);
     }
 }

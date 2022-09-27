@@ -127,7 +127,7 @@ namespace DeviceManagement_WebApp.Controllers
                 return NotFound();
             }
 
-            var device = await _DeviceRepository.Device
+            var device = _DeviceRepository.Device
                 .Include(d => d.Category)
                 .Include(d => d.Zone)
                 .FirstOrDefaultAsync(m => m.DeviceId == id);
@@ -144,7 +144,7 @@ namespace DeviceManagement_WebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            var device = await _DeviceRepository.Device.FindAsync(id);
+            var device = _DeviceRepository.FindAsync(id);
             _DeviceRepository.Remove(device);
             await _DeviceRepository.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
