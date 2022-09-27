@@ -28,7 +28,7 @@ namespace DeviceManagement_WebApp.Controllers
         public async Task<IActionResult> Index()
         {
             //return View(_ZoneRepository.GetAll());
-            return View(await _CategoryRepository.ToListAsync());
+            return View(await _ZoneRepository.ToListAsync());
         }
 
         // GET: Zones/Details/5
@@ -39,7 +39,7 @@ namespace DeviceManagement_WebApp.Controllers
                 return NotFound();
             }
 
-            var zone = await _ZoneRepository.Zone.FirstOrDefaultAsync(m => m.ZoneId == id);
+            var zone = await _ZoneRepository.FirstOrDefaultAsync(m => m.ZoneId == id);
             if (zone == null)
             {
                 return NotFound();
@@ -76,7 +76,7 @@ namespace DeviceManagement_WebApp.Controllers
                 return NotFound();
             }
 
-            var zone = await _ZoneRepository.FindAsyncVal(id);
+            var zone = _ZoneRepository.FindAsyncVal(id);
             if (zone == null)
             {
                 return NotFound();
@@ -89,11 +89,11 @@ namespace DeviceManagement_WebApp.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("ZoneId,ZoneName,ZoneDescription,DateCreated")] Zone zone)
+        public Task<IActionResult> Edit(Guid id, [Bind("ZoneId,ZoneName,ZoneDescription,DateCreated")] Zone zone)
         {
             if (id != zone.ZoneId)
             {
-                return NotFound();
+                return Task.FromResult(NotFound());
             }
 
             try
@@ -105,14 +105,14 @@ namespace DeviceManagement_WebApp.Controllers
             {
                 if (!ZoneExists(zone.ZoneId))
                 {
-                    return NotFound();
+                    return Task.FromResult(NotFound());
                 }
                 else
                 {
                     throw;
                 }
             }
-            return RedirectToAction(nameof(Index));
+            return Task.FromResult(RedirectToAction(nameof(Index)));
 
         }
 
@@ -138,15 +138,15 @@ namespace DeviceManagement_WebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            var zone = await _ZoneRepository.FindAsyncVal(id);
+            var zone = _ZoneRepository.FindAsyncVal(id);
             _ZoneRepository.Remove(zone);
-            _ZoneRepository.SaveChangesAsync();
+            await _ZoneRepository.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ZoneExists(Guid id)
         {
-            return _ZoneRepository.Zone.Any(e => e.ZoneId == id);
+            return _ZoneRepository.Any(id);
         }
     }
 }

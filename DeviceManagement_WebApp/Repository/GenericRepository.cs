@@ -49,22 +49,19 @@ namespace DeviceManagement_WebApp.Repository
             return _context.Set<T>().FindAsync(id);
         }
 
-        void IGenericRepository<T>.FirstOrDefaultAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
 
         public Task<int> SaveChangesAsync()
         {
             return _context.SaveChangesAsync();
         }
 
-        void IGenericRepository<T>.SaveChangesAsync()
+
+        void IGenericRepository<T>.Update(T entity)
         {
             throw new NotImplementedException();
         }
 
-        void IGenericRepository<T>.Update(T entity)
+        public void FirstOrDefaultAsync(int id)
         {
             throw new NotImplementedException();
         }
