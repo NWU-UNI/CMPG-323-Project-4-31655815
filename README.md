@@ -3,6 +3,16 @@
 * [General info](#general-info)
 * [Requirements](#Requirements)
 * [Setup](#setup)
+* [App (How To)](#App)
+
+## App (How To)
+This App Gives you a Log In Screen where you can Regester or log in.
+When you are loged in you can access the Datebase , Change, edit , Update , Delete or View Data.
+You Will se you have Caregories , Devices and Zones.
+
+## Setup
+To run this project, install it locally
+IT is Hosted on Azure at https://devicemanagementwebapp-31655815.azurewebsites.net/
 
 ## General info
 This project is ASP.NET Core MVC Web Application ,implementing coding principles and design patterns aligning to the 
@@ -82,6 +92,4 @@ the user would use the App
 
 ### Create a reference list document that contains all sites visited and used to complete the project
 	
-## Setup
-To run this project, install it locally
-IT is Hosted on Azure at https://devicemanagementwebapp-31655815.azurewebsites.net/
+
