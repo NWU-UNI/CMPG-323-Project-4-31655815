@@ -83,4 +83,5 @@ the user would use the App
 ### Create a reference list document that contains all sites visited and used to complete the project
 	
 ## Setup
-To run this project, install it locally using npm:
+To run this project, install it locally
+IT is Hosted on Azure at https://devicemanagementwebapp-31655815.azurewebsites.net/
