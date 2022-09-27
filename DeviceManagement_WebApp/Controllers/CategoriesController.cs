@@ -23,7 +23,7 @@ namespace DeviceManagement_WebApp.Controllers
         // GET: Categories
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Category.ToListAsync());
+            return View(await _CategoryRepository.ToListAsync());
         }
 
         // GET: Categories/Details/5

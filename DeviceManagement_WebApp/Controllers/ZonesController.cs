@@ -27,7 +27,8 @@ namespace DeviceManagement_WebApp.Controllers
         // GET: Zones
         public async Task<IActionResult> Index()
         {
-            return View(_ZoneRepository.GetAll());
+            //return View(_ZoneRepository.GetAll());
+            return View(await _CategoryRepository.ToListAsync());
         }
 
         // GET: Zones/Details/5
@@ -61,8 +62,8 @@ namespace DeviceManagement_WebApp.Controllers
         public async Task<IActionResult> Create([Bind("ZoneId,ZoneName,ZoneDescription,DateCreated")] Zone zone)
         {
             zone.ZoneId = Guid.NewGuid();
-            _context.Add(zone);
-            await _context.SaveChangesAsync();
+            _ZoneRepository.Add(zone);
+            await _ZoneRepository.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));
         }
@@ -75,7 +76,7 @@ namespace DeviceManagement_WebApp.Controllers
                 return NotFound();
             }
 
-            var zone = await _context.Zone.FindAsync(id);
+            var zone = await _ZoneRepository.FindAsyncVal(id);
             if (zone == null)
             {
                 return NotFound();
@@ -97,8 +98,8 @@ namespace DeviceManagement_WebApp.Controllers
 
             try
             {
-                _context.Update(zone);
-                await _context.SaveChangesAsync();
+                _ZoneRepository.Update(zone);
+                _ZoneRepository.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -123,8 +124,7 @@ namespace DeviceManagement_WebApp.Controllers
                 return NotFound();
             }
 
-            var zone = await _context.Zone
-                .FirstOrDefaultAsync(m => m.ZoneId == id);
+            var zone = await _ZoneRepository.FirstOrDefaultAsync(m => m.ZoneId == id);
             if (zone == null)
             {
                 return NotFound();
@@ -138,15 +138,15 @@ namespace DeviceManagement_WebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            var zone = await _context.Zone.FindAsync(id);
-            _context.Zone.Remove(zone);
-            await _context.SaveChangesAsync();
+            var zone = await _ZoneRepository.FindAsyncVal(id);
+            _ZoneRepository.Remove(zone);
+            _ZoneRepository.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ZoneExists(Guid id)
         {
-            return _context.Zone.Any(e => e.ZoneId == id);
+            return _ZoneRepository.Zone.Any(e => e.ZoneId == id);
         }
     }
 }

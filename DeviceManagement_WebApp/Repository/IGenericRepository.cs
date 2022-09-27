@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq.Expressions;
 using System;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace DeviceManagement_WebApp.Repository
 {
@@ -13,6 +15,14 @@ namespace DeviceManagement_WebApp.Repository
         void AddRange(IEnumerable<T> entities);
         void Remove(T entity);
         void RemoveRange(IEnumerable<T> entities);
+        //void FindAsyncVal(int id);
+
+        //void SaveChangesAsync();
+        //void FirstOrDefaultAsync(int id);
+        //void Update(T entity);
+
     }
+
+
 
 }

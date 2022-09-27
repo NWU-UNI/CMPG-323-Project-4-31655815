@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using DeviceManagement_WebApp.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
@@ -78,6 +79,11 @@ namespace DeviceManagement_WebApp.Data
             });
 
             OnModelCreatingPartial(modelBuilder);
+        }
+
+        internal Task<object> SafeChangesAsync()
+        {
+            throw new NotImplementedException();
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);

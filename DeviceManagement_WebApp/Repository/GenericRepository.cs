@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Linq;
 using System;
+using System.Threading.Tasks;
 
 namespace DeviceManagement_WebApp.Repository
 {
@@ -43,9 +44,30 @@ namespace DeviceManagement_WebApp.Repository
         }
 
 
+        public ValueTask<T> FindAsyncVal(Guid? id)
+        {
+            return _context.Set<T>().FindAsync(id);
+        }
 
+        void IGenericRepository<T>.FirstOrDefaultAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
 
+        public Task<int> SaveChangesAsync()
+        {
+            return _context.SaveChangesAsync();
+        }
 
+        void IGenericRepository<T>.SaveChangesAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IGenericRepository<T>.Update(T entity)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 
