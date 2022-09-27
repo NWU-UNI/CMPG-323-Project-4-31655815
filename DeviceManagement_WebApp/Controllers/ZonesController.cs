@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using DeviceManagement_WebApp.Data;
 using DeviceManagement_WebApp.Models;
 using DeviceManagement_WebApp.Repository;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DeviceManagement_WebApp.Controllers
 {
@@ -16,6 +17,8 @@ namespace DeviceManagement_WebApp.Controllers
 
         private readonly IZoneRepository _ZoneRepository;
 
+
+        [ActivatorUtilitiesConstructor]
         public ZonesController(IZoneRepository zoneRepository)
         {
             _ZoneRepository = zoneRepository;

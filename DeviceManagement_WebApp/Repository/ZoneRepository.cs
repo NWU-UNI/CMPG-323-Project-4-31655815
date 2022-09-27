@@ -19,6 +19,11 @@ namespace DeviceManagement_WebApp.Repository
             throw new NotImplementedException();
         }
 
+        public bool Any(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task FirstOrDefaultAsync(Func<object, bool> value)
         {
             throw new NotImplementedException();

@@ -15,6 +15,7 @@ namespace DeviceManagement_WebApp.Repository
         Task<object> ToListAsync();
         void Update(Models.Zone zone);
         Zone GetMostRecentZone();
+        bool Any(Guid id);
     }
 
     
