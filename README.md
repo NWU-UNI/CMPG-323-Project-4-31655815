@@ -6,9 +6,9 @@
 * [App (How To)](#App)
 
 ## App (How To)
-This App Gives you a Log In Screen where you can Regester or log in.
-When you are loged in you can access the Datebase , Change, edit , Update , Delete or View Data.
-You Will se you have Caregories , Devices and Zones.
+* This App Gives you a Log In Screen where you can Regester or log in.
+* When you are loged in you can access the Datebase , Change, edit , Update , Delete or View Data.
+* You Will se you have Caregories , Devices and Zones.
 
 ## Setup
 To run this project, install it locally
