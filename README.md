@@ -10,7 +10,7 @@ requirements of the project.
 * [Requirements](#Requirements)
 	
 ## Requirements
-# GitHub Administration
+### GitHub Administration
 * Create and Configure GitHub Repository
 * Create a ReadME.md file 
 * Ensure that the solution has been 
@@ -27,7 +27,7 @@ the data source
 hosted database in the 
 appsettings.json file
 
-# Design Pattern Implementation
+### Design Pattern Implementation
 * Create Repository Classes
 * Create a repository class that will 
 contain all data access operations 
@@ -39,7 +39,7 @@ relating to Zones
 contain all data access operations 
 relating to Categories
 
-# Transfer data access operations
+### Transfer data access operations
 * Transfer all data access operations 
 from the Devices controller to the 
 Devices Repository class
@@ -50,7 +50,7 @@ Zones Repository class
 from the Categories controller to the 
 Categories Repository class
 
-# Implement repository classes
+### Implement repository classes
 * Implement the use of the Device 
 repository class in the Device 
 controller in place of data access 
@@ -68,7 +68,7 @@ operations that have been
 transferred to the repository class
 
 
-# Security 
+### Security 
 * Ensure that no credentials are 
 stored on GitHub
 * Web API Cloud Hosting Create an App Service (connected 
@@ -80,7 +80,7 @@ App is secure and accessible
 the GitHub repository explains how 
 the user would use the App
 
-# Create a reference list document that contains all sites visited and used to complete the project
+### Create a reference list document that contains all sites visited and used to complete the project
 	
 ## Setup
 To run this project, install it locally using npm:
