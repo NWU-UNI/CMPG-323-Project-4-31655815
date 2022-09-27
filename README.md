@@ -1,13 +1,15 @@
 # 31655815_P3_ConnectedOffice
 ## Table of contents
 * [General info](#general-info)
-* [Technologies](#technologies)
+* [Requirements](#Requirements)
 * [Setup](#setup)
 
 ## General info
-This project is simple Lorem ipsum dolor generator.
+This project is ASP.NET Core MVC Web Application ,implementing coding principles and design patterns aligning to the 
+requirements of the project.
+* [Requirements](#Requirements)
 	
-## Technologies
+## Requirements
 Project is created with:
 * Lorem version: 12.3
 * Ipsum version: 2.33
@@ -15,8 +17,3 @@ Project is created with:
 	
 ## Setup
 To run this project, install it locally using npm:
-
-```
-$ cd ../lorem
-$ npm install
-$ npm start
