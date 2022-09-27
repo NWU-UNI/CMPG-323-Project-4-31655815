@@ -24,6 +24,11 @@ namespace DeviceManagement_WebApp.Repository
             throw new NotImplementedException();
         }
 
+        public Task<object> FindAsyncVal()
+        {
+            throw new NotImplementedException();
+        }
+
         public Task FirstOrDefaultAsync(Func<object, bool> value)
         {
             throw new NotImplementedException();

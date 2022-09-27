@@ -16,6 +16,7 @@ namespace DeviceManagement_WebApp.Repository
         void Update(Models.Zone zone);
         Zone GetMostRecentZone();
         bool Any(Guid id);
+        Task<object> FindAsyncVal();
     }
 
     
