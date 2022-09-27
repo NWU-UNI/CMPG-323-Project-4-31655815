@@ -31,6 +31,7 @@ namespace DeviceManagement_WebApp.Repository
         public Task<object> ToListAsync()
         {
             throw new NotImplementedException();
+            //return _context.ToListAsync();
         }
 
         public void Update(Device device)
@@ -46,11 +47,13 @@ namespace DeviceManagement_WebApp.Repository
         object IDeviceRepository.Include(Func<object, object> value)
         {
             throw new NotImplementedException();
+            //return _context.Include();
         }
 
         Task IDeviceRepository.SaveChangesAsync()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            return _context.SafeChangesAsync();
         }
     }
 

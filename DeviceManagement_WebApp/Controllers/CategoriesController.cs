@@ -34,7 +34,7 @@ namespace DeviceManagement_WebApp.Controllers
                 return NotFound();
             }
 
-            var category = await _context.Category
+            var category = await _CategoryRepository.Category
                 .FirstOrDefaultAsync(m => m.CategoryId == id);
             if (category == null)
             {
@@ -58,8 +58,8 @@ namespace DeviceManagement_WebApp.Controllers
         public async Task<IActionResult> Create([Bind("CategoryId,CategoryName,CategoryDescription,DateCreated")] Category category)
         {
             category.CategoryId = Guid.NewGuid();
-            _context.Add(category);
-            await _context.SaveChangesAsync();
+            _CategoryRepository.Add(category);
+            await _CategoryRepository.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
@@ -71,7 +71,7 @@ namespace DeviceManagement_WebApp.Controllers
                 return NotFound();
             }
 
-            var category = await _context.Category.FindAsync(id);
+            var category = _CategoryRepository.FindAsync(id);
             if (category == null)
             {
                 return NotFound();
@@ -92,8 +92,8 @@ namespace DeviceManagement_WebApp.Controllers
             }
             try
             {
-                _context.Update(category);
-                await _context.SaveChangesAsync();
+                _CategoryRepository.Update(category);
+                await _CategoryRepository.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -117,7 +117,7 @@ namespace DeviceManagement_WebApp.Controllers
                 return NotFound();
             }
 
-            var category = await _context.Category
+            var category = await _CategoryRepository.Category
                 .FirstOrDefaultAsync(m => m.CategoryId == id);
             if (category == null)
             {
@@ -132,15 +132,15 @@ namespace DeviceManagement_WebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            var category = await _context.Category.FindAsync(id);
-            _context.Category.Remove(category);
-            await _context.SaveChangesAsync();
+            var category = _CategoryRepository.FindAsync(id);
+            _CategoryRepository.Remove(category);
+            await _CategoryRepository.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool CategoryExists(Guid id)
         {
-            return _context.Category.Any(e => e.CategoryId == id);
+            return _CategoryRepository.Any(e => e.CategoryId == id);
         }
     }
 }
