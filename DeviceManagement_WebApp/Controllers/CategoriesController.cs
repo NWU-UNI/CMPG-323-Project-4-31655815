@@ -27,22 +27,22 @@ namespace DeviceManagement_WebApp.Controllers
         }
 
         // GET: Categories/Details/5
-        public async Task<IActionResult> Details(Guid? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+        //public async Task<IActionResult> Details(Guid? id)
+        //{
+        //   if (id == null)
+        //   {
+         //     return NotFound();
+         //  }
 
-            var category = await _CategoryRepository.Category
-                .FirstOrDefaultAsync(m => m.CategoryId == id);
-            if (category == null)
-            {
-                return NotFound();
-            }
 
-            return View(category);
-        }
+         //    var category = await _CategoryRepository.FirstOrDefaultAsync(m => m.CategoryId == id);
+         //   if (category == null)
+         //   {
+          //      return NotFound();
+         //   }
+
+          //  //return View(category);
+        //}
 
         // GET: Categories/Create
         public IActionResult Create()
@@ -109,23 +109,27 @@ namespace DeviceManagement_WebApp.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // GET: Categories/Delete/5
+        private bool CategoryExists(Guid categoryId)
+        {
+            throw new NotImplementedException();
+        }
+
+        /*/ GET: Categories/Delete/5
         public async Task<IActionResult> Delete(Guid? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+           if (id == null)
+          {
+              return NotFound();
+           }
 
-            var category = await _CategoryRepository.Category
-                .FirstOrDefaultAsync(m => m.CategoryId == id);
-            if (category == null)
-            {
-                return NotFound();
-            }
+           var category = _CategoryRepository.FindAsync(m => m.CategoryId == id);
+           if (category == null)
+          {
+              return NotFound();
+           }
 
-            return View(category);
-        }
+           return View(category);
+        }*/
 
         // POST: Categories/Delete/5
         [HttpPost, ActionName("Delete")]
@@ -138,9 +142,9 @@ namespace DeviceManagement_WebApp.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CategoryExists(Guid id)
+        /*private bool CategoryExists(Guid id)
         {
             return _CategoryRepository.Any(e => e.CategoryId == id);
-        }
+        }*/
     }
 }

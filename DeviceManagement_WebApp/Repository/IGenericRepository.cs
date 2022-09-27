@@ -17,6 +17,7 @@ namespace DeviceManagement_WebApp.Repository
         void RemoveRange(IEnumerable<T> entities);
         void FirstOrDefaultAsync(int id);
         void Update(T entity);
+
         //void FindAsyncVal(int id);
 
         //void SaveChangesAsync();

@@ -23,11 +23,11 @@ namespace DeviceManagement_WebApp.Controllers
         // GET: Devices
         public async Task<IActionResult> Index()
         {
-            var deviceRepository = _DeviceRepository.Include(d => d.Device).Include(d => d.Device);
-            return View(await deviceRepository.ToListAsync());
+            //var deviceRepository = _DeviceRepository.Include(d => d.Device).Include(d => d.Device);
+            return View(await _DeviceRepository.ToListAsync());
         }
 
-        // GET: Devices/Details/5
+        /* GET: Devices/Details/5
         public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null)
@@ -35,17 +35,16 @@ namespace DeviceManagement_WebApp.Controllers
                 return NotFound();
             }
 
-            var device = await _DeviceRepository
-                .Include(d => d.Device)
+           var device = await _DeviceRepository
+               .Include(d => d.Device)
                 .Include(d => d.Zone)
                 .FirstOrDefaultAsync(m => m.DeviceId == id);
             if (device == null)
             {
                 return NotFound();
             }
-
             return View(device);
-        }
+        }*/
 
         // GET: Devices/Create
         public IActionResult Create()
@@ -70,7 +69,7 @@ namespace DeviceManagement_WebApp.Controllers
 
         }
 
-        // GET: Devices/Edit/5
+        /* GET: Devices/Edit/5
         public async Task<IActionResult> Edit(Guid? id)
         {
             if (id == null)
@@ -78,15 +77,15 @@ namespace DeviceManagement_WebApp.Controllers
                 return NotFound();
             }
 
-            var device = await _DeviceRepository.FindAsync(id);
+            var device = _DeviceRepository.FindAsync(id);
             if (device == null)
             {
                 return NotFound();
             }
-            ViewData["CategoryId"] = new SelectList(_DeviceRepository.Category, "CategoryId", "CategoryName", device.CategoryId);
-            ViewData["ZoneId"] = new SelectList(_DeviceRepository.Zone, "ZoneId", "ZoneName", device.ZoneId);
+            ViewData["CategoryId"] = new SelectList(_DeviceRepository.Category, "CategoryId", "CategoryName", device.GetType());
+            ViewData["ZoneId"] = new SelectList(_DeviceRepository.Zone, "ZoneId", "ZoneName", device.GetType());
             return View(device);
-        }
+        }*/
 
         // POST: Devices/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
@@ -119,14 +118,19 @@ namespace DeviceManagement_WebApp.Controllers
 
         }
 
-        // GET: Devices/Delete/5
+        private bool DeviceExists(Guid deviceId)
+        {
+            throw new NotImplementedException();
+        }
+
+        /* GET: Devices/Delete/5
         public async Task<IActionResult> Delete(Guid? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
-
+         
             var device = _DeviceRepository.Device
                 .Include(d => d.Category)
                 .Include(d => d.Zone)
@@ -135,9 +139,9 @@ namespace DeviceManagement_WebApp.Controllers
             {
                 return NotFound();
             }
-
+         
             return View(device);
-        }
+        }*/
 
         // POST: Devices/Delete/5
         [HttpPost, ActionName("Delete")]
@@ -150,9 +154,9 @@ namespace DeviceManagement_WebApp.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool DeviceExists(Guid id)
-        {
-            return _DeviceRepository.Any(e => e.DeviceId == id);
-        }
+        //private bool DeviceExists(Guid id)
+        //{
+        //    return _DeviceRepository.Any(e => e.DeviceId == id);
+        //}
     }
 }

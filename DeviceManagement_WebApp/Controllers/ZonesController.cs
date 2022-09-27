@@ -17,8 +17,6 @@ namespace DeviceManagement_WebApp.Controllers
 
         private readonly IZoneRepository _ZoneRepository;
 
-
-        [ActivatorUtilitiesConstructor]
         public ZonesController(IZoneRepository zoneRepository)
         {
             _ZoneRepository = zoneRepository;
@@ -34,7 +32,7 @@ namespace DeviceManagement_WebApp.Controllers
             return View(await _ZoneRepository.ToListAsync());
         }
 
-        // GET: Zones/Details/5
+        /*// GET: Zones/Details/5
         public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null)
@@ -49,7 +47,7 @@ namespace DeviceManagement_WebApp.Controllers
             }
 
             return View(zone);
-        }
+        }*/
 
         // GET: Zones/Create
         public IActionResult Create()
@@ -92,12 +90,12 @@ namespace DeviceManagement_WebApp.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public Task<IActionResult> Edit(Guid id, [Bind("ZoneId,ZoneName,ZoneDescription,DateCreated")] Zone zone)
+         public Task<IActionResult> Edit(Guid id, [Bind("ZoneId,ZoneName,ZoneDescription,DateCreated")] Zone zone)
         {
             if (id != zone.ZoneId)
             {
                 return Task.FromResult(NotFound());
-            }
+           }
 
             try
             {
@@ -109,7 +107,7 @@ namespace DeviceManagement_WebApp.Controllers
                 if (!ZoneExists(zone.ZoneId))
                 {
                     return Task.FromResult(NotFound());
-                }
+               }
                 else
                 {
                     throw;
@@ -138,7 +136,7 @@ namespace DeviceManagement_WebApp.Controllers
 
         // POST: Zones/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
             var zone = _ZoneRepository.FindAsyncVal(id);
