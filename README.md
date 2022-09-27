@@ -10,15 +10,9 @@ requirements of the project.
 * [Requirements](#Requirements)
 	
 ## Requirements
-GitHub 
-Administration
-Create and Configure 
-GitHub Repository
-Create a repository named ‘CMPG 
-323 Project 3 - <add your student 
-number>’
-
-Create a ReadME.md file that will be 
+# GitHub Administration
+*Create and Configure GitHub Repository
+*Create a ReadME.md file that will be 
 used to describe your project and 
 how stakeholders are to use the 
 report that you have developed
