@@ -17,6 +17,7 @@ namespace DeviceManagement_WebApp.Controllers
 
         private readonly IZoneRepository _ZoneRepository;
 
+
         public ZonesController(IZoneRepository zoneRepository)
         {
             _ZoneRepository = zoneRepository;
@@ -70,7 +71,7 @@ namespace DeviceManagement_WebApp.Controllers
         }
 
         // GET: Zones/Edit/5
-        public async Task<IActionResult> Edit(Guid? id)
+        /*public async Task<IActionResult> Edit(Guid? id)
         {
             if (id == null)
             {
@@ -83,14 +84,14 @@ namespace DeviceManagement_WebApp.Controllers
                 return NotFound();
             }
             return View(zone);
-        }
+        }*/
 
         // POST: Zones/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-         public Task<IActionResult> Edit(Guid id, [Bind("ZoneId,ZoneName,ZoneDescription,DateCreated")] Zone zone)
+        /* public Task<IActionResult> Edit(Guid id, [Bind("ZoneId,ZoneName,ZoneDescription,DateCreated")] Zone zone)
         {
             if (id != zone.ZoneId)
             {
@@ -115,10 +116,10 @@ namespace DeviceManagement_WebApp.Controllers
             }
             return Task.FromResult(RedirectToAction(nameof(Index)));
 
-        }
+        }*/
 
         // GET: Zones/Delete/5
-        public async Task<IActionResult> Delete(Guid? id)
+        /*public async Task<IActionResult> Delete(Guid? id)
         {
             if (id == null)
             {
@@ -132,7 +133,7 @@ namespace DeviceManagement_WebApp.Controllers
             }
 
             return View(zone);
-        }
+        }*/
 
         // POST: Zones/Delete/5
         [HttpPost, ActionName("Delete")]
