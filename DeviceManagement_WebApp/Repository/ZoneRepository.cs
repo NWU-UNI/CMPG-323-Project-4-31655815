@@ -34,8 +34,8 @@ namespace DeviceManagement_WebApp.Repository
 
         public Zone GetMostRecentZone()
         {
-            //throw new System.NotImplementedException();
-            return _context.Zone.OrderByDescending(Device => Zone.DateCreated).FirstOrDefault();
+            throw new System.NotImplementedException();
+            //return _context.Zone.OrderByDescending(Device => Zone.DateCreated).FirstOrDefault();
             
         }
 

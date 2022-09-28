@@ -78,15 +78,6 @@ namespace DeviceManagement_WebApp.Repository
             throw new NotImplementedException();
         }
 
-        Task IDeviceRepository.FindAsyncVal(Guid? id)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task IDeviceRepository.FirstOrDefaultAsync(Func<object, bool> value)
-        {
-            throw new NotImplementedException();
-        }
 
         Device IDeviceRepository.GetMostRecentDevice()
         {
@@ -99,21 +90,7 @@ namespace DeviceManagement_WebApp.Repository
             //return _context.Include();
         }
 
-        void IDeviceRepository.Remove(Task device)
-        {
-            throw new NotImplementedException();
-        }
 
-        Task IDeviceRepository.SaveChangesAsync()
-        {
-            //throw new NotImplementedException();
-            return _context.SafeChangesAsync();
-        }
-
-        Task<object> IDeviceRepository.ToListAsync()
-        {
-            throw new NotImplementedException();
-        }
     }
 
 

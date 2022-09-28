@@ -4,6 +4,7 @@ using System.Linq.Expressions;
 using System.Linq;
 using System;
 using System.Threading.Tasks;
+using DeviceManagement_WebApp.Models;
 
 namespace DeviceManagement_WebApp.Repository
 {
@@ -67,6 +68,41 @@ namespace DeviceManagement_WebApp.Repository
         }
 
         Task<T> IGenericRepository<T>.FindAsyncVal(Guid? id)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IGenericRepository<T>.Add(Zone zone)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task IGenericRepository<T>.FirstOrDefaultAsync(Func<object, bool> value)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IGenericRepository<T>.Remove(Task zone)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task IGenericRepository<T>.SaveChangesAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<object> IGenericRepository<T>.ToListAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IGenericRepository<T>.Update(Zone zone)
+        {
+            throw new NotImplementedException();
+        }
+
+        bool IGenericRepository<T>.Any(Guid id)
         {
             throw new NotImplementedException();
         }

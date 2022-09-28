@@ -14,11 +14,12 @@ namespace DeviceManagement_WebApp.Repository
 
         //void Add(Models.Device device);
        
-        Task<object> ToListAsync();
+        //Task<object> ToListAsync();
         //void Update(Models.Device device);
         object Include(Func<object, object> value);
         Task FindAsync(Guid id);
         bool Any(Func<object, bool> value);
         Task FindAsync(Guid? id);
+        //Task<object> ToListAsync();
     }
 }

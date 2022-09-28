@@ -28,7 +28,7 @@ namespace DeviceManagement_WebApp.Controllers
         }
 
         // GET: Devices/Details/5
-        public async Task<IActionResult> Details(Guid? id)
+        /*public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null)
             {
@@ -42,7 +42,7 @@ namespace DeviceManagement_WebApp.Controllers
                 return NotFound();
             }
             return View(device);
-        }
+        }*/
 
         // GET: Devices/Create
         public IActionResult Create()
@@ -75,7 +75,7 @@ namespace DeviceManagement_WebApp.Controllers
                 return NotFound();
             }
 
-            var device = _DeviceRepository.FindAsync(id);
+            var device = await _DeviceRepository.FindAsyncVal(id);
             if (device == null)
             {
                 return NotFound();
@@ -122,7 +122,7 @@ namespace DeviceManagement_WebApp.Controllers
         }
 
         // GET: Devices/Delete/5
-        public async Task<IActionResult> Delete(Guid? id)
+        /*public async Task<IActionResult> Delete(Guid? id)
         {
             if (id == null)
             {
@@ -139,7 +139,7 @@ namespace DeviceManagement_WebApp.Controllers
             }
          
             return View(device);
-        }
+        }*/
 
         // POST: Devices/Delete/5
         [HttpPost, ActionName("Delete")]
