@@ -10,13 +10,10 @@ namespace DeviceManagement_WebApp.Repository
         object Category { get; }
 
         bool Any(Func<object, bool> value);
-        Task FindAsync(Guid? id);
-        IActionResult FindAsync();
-        object FindAsync(Func<object, bool> value);
-        Task FirstOrDefaultAsync(Func<object, bool> value);
+        //Task FindAsync(Guid? id);
+        //object FindAsync(Func<object, bool> value);
+        
         Category GetMostRecentCategory();
-        void Remove(Task category);
-        Task SaveChangesAsync();
-        Task<object> ToListAsync();
+ 
     }
 }

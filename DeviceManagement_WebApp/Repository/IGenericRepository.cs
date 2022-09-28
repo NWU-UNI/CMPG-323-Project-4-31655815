@@ -18,7 +18,15 @@ namespace DeviceManagement_WebApp.Repository
         void FirstOrDefaultAsync(int id);
         void Update(T entity);
 
-        //void FindAsyncVal(int id);
+        Task<T> FindAsyncVal(Guid? id);
+
+        void Add(Models.Zone zone);
+        Task FirstOrDefaultAsync(Func<object, bool> value);
+        void Remove(Task zone);
+        Task SaveChangesAsync();
+        Task<object> ToListAsync();
+        void Update(Models.Zone zone);
+        bool Any(Guid id);
 
         //void SaveChangesAsync();
         //void FirstOrDefaultAsync(int id);

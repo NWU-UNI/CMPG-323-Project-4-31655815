@@ -71,7 +71,7 @@ namespace DeviceManagement_WebApp.Controllers
                 return NotFound();
             }
 
-            var category = _CategoryRepository.FindAsync(id);
+            var category = await _CategoryRepository.FindAsyncVal(id);
             if (category == null)
             {
                 return NotFound();
@@ -114,7 +114,7 @@ namespace DeviceManagement_WebApp.Controllers
             throw new NotImplementedException();
         }
 
-        /*/ GET: Categories/Delete/5
+        // GET: Categories/Delete/5
         public async Task<IActionResult> Delete(Guid? id)
         {
            if (id == null)
@@ -122,29 +122,26 @@ namespace DeviceManagement_WebApp.Controllers
               return NotFound();
            }
 
-           var category = _CategoryRepository.FindAsync(m => m.CategoryId == id);
+           var category = await _CategoryRepository.FindAsyncVal(id);
            if (category == null)
           {
               return NotFound();
            }
 
            return View(category);
-        }*/
+        }
 
         // POST: Categories/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            var category = _CategoryRepository.FindAsync(id);
+            var category = _CategoryRepository.FindAsyncVal(id);
             _CategoryRepository.Remove(category);
             await _CategoryRepository.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        /*private bool CategoryExists(Guid id)
-        {
-            return _CategoryRepository.Any(e => e.CategoryId == id);
-        }*/
+
     }
 }

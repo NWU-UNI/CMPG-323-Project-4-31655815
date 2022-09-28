@@ -17,6 +17,10 @@ namespace DeviceManagement_WebApp.Repository
 
         public IEnumerable Zone { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
+        IEnumerable IDeviceRepository.Category => throw new NotImplementedException();
+
+        IEnumerable IDeviceRepository.Zone { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public bool Any(Func<object, bool> value)
         {
             throw new NotImplementedException();
@@ -59,7 +63,32 @@ namespace DeviceManagement_WebApp.Repository
             throw new NotImplementedException();
         }
 
+        bool IDeviceRepository.Any(Func<object, bool> value)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task IDeviceRepository.FindAsync(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task IDeviceRepository.FindAsync(Guid? id)
+        {
+            throw new NotImplementedException();
+        }
+
         Task IDeviceRepository.FindAsyncVal(Guid? id)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task IDeviceRepository.FirstOrDefaultAsync(Func<object, bool> value)
+        {
+            throw new NotImplementedException();
+        }
+
+        Device IDeviceRepository.GetMostRecentDevice()
         {
             throw new NotImplementedException();
         }
@@ -70,10 +99,20 @@ namespace DeviceManagement_WebApp.Repository
             //return _context.Include();
         }
 
+        void IDeviceRepository.Remove(Task device)
+        {
+            throw new NotImplementedException();
+        }
+
         Task IDeviceRepository.SaveChangesAsync()
         {
             //throw new NotImplementedException();
             return _context.SafeChangesAsync();
+        }
+
+        Task<object> IDeviceRepository.ToListAsync()
+        {
+            throw new NotImplementedException();
         }
     }
 

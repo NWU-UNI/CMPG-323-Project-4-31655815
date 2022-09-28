@@ -44,9 +44,9 @@ namespace DeviceManagement_WebApp.Repository
         }
 
 
-        public ValueTask<T> FindAsyncVal(Guid? id)
+        public async ValueTask<T> FindAsyncVal(Guid? id)
         {
-            return _context.Set<T>().FindAsync(id);
+            return await _context.Set<T>().FindAsync(id);
         }
 
 
@@ -62,6 +62,11 @@ namespace DeviceManagement_WebApp.Repository
         }
 
         public void FirstOrDefaultAsync(int id)
+        {
+            
+        }
+
+        Task<T> IGenericRepository<T>.FindAsyncVal(Guid? id)
         {
             throw new NotImplementedException();
         }

@@ -33,7 +33,7 @@ namespace DeviceManagement_WebApp.Controllers
             return View(await _ZoneRepository.ToListAsync());
         }
 
-        /*// GET: Zones/Details/5
+       // GET: Zones/Details/5
         public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null)
@@ -41,14 +41,14 @@ namespace DeviceManagement_WebApp.Controllers
                 return NotFound();
             }
 
-            var zone = await _ZoneRepository.FirstOrDefaultAsync(m => m.ZoneId == id);
+            var zone = await _ZoneRepository.FindAsyncVal(id);
             if (zone == null)
             {
                 return NotFound();
             }
 
             return View(zone);
-        }*/
+        }
 
         // GET: Zones/Create
         public IActionResult Create()
@@ -71,31 +71,31 @@ namespace DeviceManagement_WebApp.Controllers
         }
 
         // GET: Zones/Edit/5
-        /*public async Task<IActionResult> Edit(Guid? id)
+        public async Task<IActionResult> Edit(Guid? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var zone = _ZoneRepository.FindAsyncVal(id);
+            var zone = await _ZoneRepository.FindAsyncVal(id);
             if (zone == null)
             {
                 return NotFound();
             }
             return View(zone);
-        }*/
+        }
 
         // POST: Zones/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        /* public Task<IActionResult> Edit(Guid id, [Bind("ZoneId,ZoneName,ZoneDescription,DateCreated")] Zone zone)
+         public Task<IActionResult> Edit(Guid id, [Bind("ZoneId,ZoneName,ZoneDescription,DateCreated")] Zone zone)
         {
             if (id != zone.ZoneId)
             {
-                return Task.FromResult(NotFound());
+                return FromResult(NotFound());
            }
 
             try
@@ -107,33 +107,43 @@ namespace DeviceManagement_WebApp.Controllers
             {
                 if (!ZoneExists(zone.ZoneId))
                 {
-                    return Task.FromResult(NotFound());
+                    return FromResult(NotFound());
                }
                 else
                 {
                     throw;
                 }
             }
-            return Task.FromResult(RedirectToAction(nameof(Index)));
+            return FromResult(RedirectToAction(nameof(Index)));
 
-        }*/
+        }
+
+        private Task<IActionResult> FromResult(RedirectToActionResult redirectToActionResult)
+        {
+            throw new NotImplementedException();
+        }
+
+        private Task<IActionResult> FromResult(NotFoundResult notFoundResult)
+        {
+            throw new NotImplementedException();
+        }
 
         // GET: Zones/Delete/5
-        /*public async Task<IActionResult> Delete(Guid? id)
+        public async Task<IActionResult> Delete(Guid? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var zone = await _ZoneRepository.FirstOrDefaultAsync(m => m.ZoneId == id);
+            var zone = await _ZoneRepository.FindAsyncVal(id);
             if (zone == null)
             {
                 return NotFound();
             }
 
             return View(zone);
-        }*/
+        }
 
         // POST: Zones/Delete/5
         [HttpPost, ActionName("Delete")]

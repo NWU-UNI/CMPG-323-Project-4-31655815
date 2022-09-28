@@ -24,22 +24,18 @@ namespace DeviceManagement_WebApp.Repository
             throw new NotImplementedException();
         }
 
-        public Task<object> FindAsyncVal()
-        {
-            throw new NotImplementedException();
-        }
-
         public Task FirstOrDefaultAsync(Func<object, bool> value)
         {
             throw new NotImplementedException();
         }
 
+
         //private readonly IGenericRepository<Zone> _ZoneRepository;
 
         public Zone GetMostRecentZone()
         {
-            throw new System.NotImplementedException();
-            //return _context.Zone.OrderByDescending(Device => Zone.DateCreated).FirstOrDefault();
+            //throw new System.NotImplementedException();
+            return _context.Zone.OrderByDescending(Device => Zone.DateCreated).FirstOrDefault();
             
         }
 
@@ -58,15 +54,6 @@ namespace DeviceManagement_WebApp.Repository
             throw new NotImplementedException();
         }
 
-        Task IZoneRepository.FindAsyncVal(Guid? id)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task IZoneRepository.SaveChangesAsync()
-        {
-            throw new NotImplementedException();
-        }
     }
 
 
