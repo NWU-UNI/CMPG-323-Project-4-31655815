@@ -29,7 +29,7 @@ namespace DeviceManagement_WebApp.Repository
  
         Task<object> ToListAsync();
         //void Update(Models.Zone zone);
-        bool Any(Guid id);
+        bool Any(Guid? id);
 
         //void SaveChangesAsync();
         //void FirstOrDefaultAsync(int id);

@@ -80,7 +80,7 @@ namespace DeviceManagement_WebApp.Repository
         }
 
 
-        bool IGenericRepository<T>.Any(Guid id)
+        bool IGenericRepository<T>.Any(Guid? id)
         {
            return _context.Set<T>().Any(id);
         }
