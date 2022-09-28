@@ -1,9 +1,15 @@
 # 31655815_P3_ConnectedOffice
 ## Table of contents
+* [Read First](#read)
 * [Setup](#setup)
 * [App (How To)](#App)
 * [General info](#general-info)
 * [Requirements](#Requirements)
+
+## Read First
+* My Project has some Errors I tried to resolve them but some things are still not working properly
+* By Implementing the Dependency Injection 80% was working but some things just dont want to
+* I Followed all the Requirments
 
 
 ## App (How To)
@@ -13,7 +19,7 @@
 
 ## Setup
 To run this project, install it locally
-IT is Hosted on Azure at https://devicemanagementwebapp-31655815.azurewebsites.net/
+IT is Hosted on Azure at https://connectedoffice-p3-31655815.azurewebsites.net
 
 ## General info
 This project is ASP.NET Core MVC Web Application ,implementing coding principles and design patterns aligning to the 
