@@ -19,7 +19,7 @@
 
 ## Setup
 To run this project, install it locally
-IT is Hosted on Azure at https://devicemanagementwebapp-31655815.azurewebsites.net/
+IT is Hosted on Azure at https://connectedoffice-p3-31655815.azurewebsites.net
 
 ## General info
 This project is ASP.NET Core MVC Web Application ,implementing coding principles and design patterns aligning to the 
