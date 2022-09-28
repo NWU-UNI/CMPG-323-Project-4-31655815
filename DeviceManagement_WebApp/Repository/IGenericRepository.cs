@@ -24,6 +24,7 @@ namespace DeviceManagement_WebApp.Repository
         //Task FirstOrDefaultAsync(Func<object, bool> value);
         //void Remove(Task zone);
         Task SaveChangesAsync();
+ 
         Task<object> ToListAsync();
         //void Update(Models.Zone zone);
         bool Any(Guid id);

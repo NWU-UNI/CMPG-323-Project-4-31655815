@@ -54,7 +54,7 @@ namespace DeviceManagement_WebApp.Repository
 
         public Task<int> SaveChangesAsync()
         {
-            return _context.SaveChangesAsync();
+            return _context.SaveChangesAsync(id);
         }
 
 
