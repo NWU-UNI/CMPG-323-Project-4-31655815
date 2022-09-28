@@ -156,9 +156,9 @@ namespace DeviceManagement_WebApp.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ZoneExists(Guid id)
+        private bool ZoneExists(Guid? id)
         {
-            return _ZoneRepository.Any(id);
+            return _ZoneRepository.ZoneExists(id);
         }
     }
 }

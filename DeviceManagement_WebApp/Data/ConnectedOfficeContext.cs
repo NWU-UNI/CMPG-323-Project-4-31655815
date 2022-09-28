@@ -81,11 +81,6 @@ namespace DeviceManagement_WebApp.Data
             OnModelCreatingPartial(modelBuilder);
         }
 
-        internal Task<object> SafeChangesAsync()
-        {
-            throw new NotImplementedException();
-        }
-
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }

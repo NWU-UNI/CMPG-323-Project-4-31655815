@@ -6,6 +6,7 @@ using System;
 using System.Threading.Tasks;
 using DeviceManagement_WebApp.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 
 namespace DeviceManagement_WebApp.Repository
 {
@@ -46,15 +47,15 @@ namespace DeviceManagement_WebApp.Repository
         }
 
 
-        public ValueTask<T> FindAsyncVal(Guid? id)
+        public Task<T> FindAsyncVal(Guid? id)
         {
-            return _context.Set<T>().FindAsync(id);
+            return _context.FindAsync(id);
         }
 
 
         public Task<int> SaveChangesAsync()
         {
-            return _context.SaveChangesAsync(id);
+            return _context.SaveChangesAsync();
         }
 
 
@@ -80,7 +81,17 @@ namespace DeviceManagement_WebApp.Repository
            return _context.Set<T>().Any(id);
         }
 
+ 
 
+        Task IGenericRepository<T>.SaveChangesAsync()
+        {
+            return _context.SaveChangesAsync();
+        }
+
+        public bool ZoneExists(Guid? id)
+        {
+            return _context.ZoneExists(id);
+        }
     }
 }
 

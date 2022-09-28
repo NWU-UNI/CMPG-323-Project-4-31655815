@@ -13,15 +13,6 @@ namespace DeviceManagement_WebApp.Repository
         {
         }
 
-        public IEnumerable Category => throw new NotImplementedException();
-
-        public IEnumerable Zone { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        IEnumerable IDeviceRepository.Category => throw new NotImplementedException();
-
-        IEnumerable IDeviceRepository.Zone { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-
 
 
     }

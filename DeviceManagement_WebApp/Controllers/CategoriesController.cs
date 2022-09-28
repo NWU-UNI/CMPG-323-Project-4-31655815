@@ -35,7 +35,7 @@ namespace DeviceManagement_WebApp.Controllers
            }
 
 
-             var category = await _CategoryRepository.FirstOrDefaultAsync(id);
+             var category = await _CategoryRepository.FindAsyncVal(id);
             if (category == null)
             {
                 return NotFound();

@@ -18,6 +18,8 @@ namespace DeviceManagement_WebApp.Repository
         void FirstOrDefaultAsync(int id);
         void Update(T entity);
 
+        bool ZoneExists(Guid? id);
+
         Task<T> FindAsyncVal(Guid? id);
 
         ///void Add(Models.Zone zone);

@@ -7,13 +7,12 @@ namespace DeviceManagement_WebApp.Repository
 {
     public interface ICategory : IGenericRepository<Category>
     {
-        object Category { get; }
 
-        bool Any(Func<object, bool> value);
+        Task FirstOrDefaultAsync(Guid? id);
+        void Remove(Task<Category> category);
+
         //Task FindAsync(Guid? id);
         //object FindAsync(Func<object, bool> value);
-        
-        Category GetMostRecentCategory();
- 
+
     }
 }
