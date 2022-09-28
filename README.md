@@ -7,7 +7,7 @@
 * [Requirements](#Requirements)
 
 ## Read First
-* My Project has some Error I tried to resolve them but some things are still not working properly
+* My Project has some Errors I tried to resolve them but some things are still not working properly
 * By Implementing the Dependency Injection 80% was working but some things just dont want to
 * I Followed all the Requirments
 
