@@ -14,7 +14,10 @@ namespace DeviceManagement_WebApp.Repository
         {
         }
 
-
+        void IZoneRepository.Remove(Task<Zone> zone)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 

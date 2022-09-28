@@ -122,7 +122,7 @@ namespace DeviceManagement_WebApp.Controllers
         }
 
         // GET: Devices/Delete/5
-        public async Task<IActionResult> Delete(Guid? id)
+        /*public async Task<IActionResult> Delete(Guid? id)
         {
             if (id == null)
             {
@@ -139,7 +139,7 @@ namespace DeviceManagement_WebApp.Controllers
             }
          
             return View(device);
-        }
+        }*/
 
         // POST: Devices/Delete/5
         [HttpPost, ActionName("Delete")]

@@ -53,7 +53,8 @@ namespace DeviceManagement_WebApp.Repository
 
         public Task<T> FindAsyncVal(Guid? id)
         {
-            return _context.FindAsync(id);
+            //return _context.FindAsync(id);
+            throw new NotImplementedException();
         }
 
 
@@ -70,19 +71,22 @@ namespace DeviceManagement_WebApp.Repository
 
         public void FirstOrDefaultAsync(int id)
         {
-            _context.Set<T>().FirstOrDefaultAsync(id);
+            //_context.Set<T>().FirstOrDefaultAsync(id);
+            throw new NotImplementedException();
         }
 
 
         public Task<object> ToListAsync()
         {
-            return _context.ToListAsync();
+            //return _context.ToListAsync();
+            throw new NotImplementedException();
         }
 
 
         bool IGenericRepository<T>.Any(Guid? id)
         {
-           return _context.Set<T>().Any(id);
+           //return _context.Set<T>().Any(id);
+            throw new NotImplementedException();
         }
 
  
@@ -94,7 +98,8 @@ namespace DeviceManagement_WebApp.Repository
 
         public bool ZoneExists(Guid? id)
         {
-            return _context.ZoneExists(id);
+            //return _context.ZoneExists(id);
+            throw new NotImplementedException();
         }
 
         public void Add(Models.Zone zone)
@@ -106,6 +111,7 @@ namespace DeviceManagement_WebApp.Repository
         {
             _context.Remove(zone);
         }
+
 
         public void Update(Models.Zone zone)
         {
