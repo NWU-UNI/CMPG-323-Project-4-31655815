@@ -7,14 +7,14 @@ namespace DeviceManagement_WebApp.Repository
 {
     public interface IZoneRepository : IGenericRepository<Zone>
     {
-        
-        Zone GetMostRecentZone();
-        
+
+
         //Task FindAsyncVal(Guid? id);
         //Task FindAsyncVal(Guid? id);
+        Task<object> ToListAsync();
     }
 
-    
+
 
 
 }

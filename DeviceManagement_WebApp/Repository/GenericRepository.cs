@@ -5,6 +5,7 @@ using System.Linq;
 using System;
 using System.Threading.Tasks;
 using DeviceManagement_WebApp.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace DeviceManagement_WebApp.Repository
 {
@@ -45,9 +46,9 @@ namespace DeviceManagement_WebApp.Repository
         }
 
 
-        public async ValueTask<T> FindAsyncVal(Guid? id)
+        public ValueTask<T> FindAsyncVal(Guid? id)
         {
-            return await _context.Set<T>().FindAsync(id);
+            return _context.Set<T>().FindAsync(id);
         }
 
 
@@ -59,53 +60,27 @@ namespace DeviceManagement_WebApp.Repository
 
         void IGenericRepository<T>.Update(T entity)
         {
-            throw new NotImplementedException();
+            _context.Set<T>().Update(entity);
         }
 
         public void FirstOrDefaultAsync(int id)
         {
-            
+            _context.Set<T>().FirstOrDefaultAsync(id);
         }
 
-        Task<T> IGenericRepository<T>.FindAsyncVal(Guid? id)
+
+        public Task<object> ToListAsync()
         {
-            throw new NotImplementedException();
+            return _context.ToListAsync();
         }
 
-        void IGenericRepository<T>.Add(Zone zone)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task IGenericRepository<T>.FirstOrDefaultAsync(Func<object, bool> value)
-        {
-            throw new NotImplementedException();
-        }
-
-        void IGenericRepository<T>.Remove(Task zone)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task IGenericRepository<T>.SaveChangesAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<object> IGenericRepository<T>.ToListAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        void IGenericRepository<T>.Update(Zone zone)
-        {
-            throw new NotImplementedException();
-        }
 
         bool IGenericRepository<T>.Any(Guid id)
         {
-            throw new NotImplementedException();
+           return _context.Set<T>().Any(id);
         }
+
+
     }
 }
 

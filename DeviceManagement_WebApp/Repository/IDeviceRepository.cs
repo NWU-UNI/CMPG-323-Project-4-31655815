@@ -10,16 +10,14 @@ namespace DeviceManagement_WebApp.Repository
         IEnumerable Category { get; }
         IEnumerable Zone { get; set; }
 
-        Device GetMostRecentDevice();
+        
+
 
         //void Add(Models.Device device);
-       
+
         //Task<object> ToListAsync();
         //void Update(Models.Device device);
-        object Include(Func<object, object> value);
-        Task FindAsync(Guid id);
-        bool Any(Func<object, bool> value);
-        Task FindAsync(Guid? id);
+
         //Task<object> ToListAsync();
     }
 }

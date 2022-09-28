@@ -14,45 +14,6 @@ namespace DeviceManagement_WebApp.Repository
         {
         }
 
-        public void Add(Models.Zone zone)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Any(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task FirstOrDefaultAsync(Func<object, bool> value)
-        {
-            throw new NotImplementedException();
-        }
-
-
-        //private readonly IGenericRepository<Zone> _ZoneRepository;
-
-        public Zone GetMostRecentZone()
-        {
-            throw new System.NotImplementedException();
-            //return _context.Zone.OrderByDescending(Device => Zone.DateCreated).FirstOrDefault();
-            
-        }
-
-        public void Remove(Task zone)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<object> ToListAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Models.Zone zone)
-        {
-            throw new NotImplementedException();
-        }
 
     }
 
