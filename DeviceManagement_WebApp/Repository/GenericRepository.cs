@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using DeviceManagement_WebApp.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
+using System.Collections;
 
 namespace DeviceManagement_WebApp.Repository
 {
@@ -46,6 +47,9 @@ namespace DeviceManagement_WebApp.Repository
             _context.Set<T>().RemoveRange(entities);
         }
 
+        public IEnumerable Category => _context.Category;
+
+        public IEnumerable Zone => _context.Zone;
 
         public Task<T> FindAsyncVal(Guid? id)
         {
@@ -91,6 +95,26 @@ namespace DeviceManagement_WebApp.Repository
         public bool ZoneExists(Guid? id)
         {
             return _context.ZoneExists(id);
+        }
+
+        public void Add(Models.Zone zone)
+        {
+            _context.Add(zone);
+        }
+
+        public void Remove(Task<Zone> zone)
+        {
+            _context.Remove(zone);
+        }
+
+        public void Update(Models.Zone zone)
+        {
+            _context.Update(zone);
+        }
+
+        public object Include(Func<object, object> value)
+        {
+            throw new NotImplementedException();
         }
     }
 }

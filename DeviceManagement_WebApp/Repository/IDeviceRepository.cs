@@ -16,5 +16,7 @@ namespace DeviceManagement_WebApp.Repository
         //Task<object> ToListAsync();
         IEnumerable Category { get; }
         IEnumerable Zone { get; }
+
+        object Include(Func<object, object> value);
     }
 }

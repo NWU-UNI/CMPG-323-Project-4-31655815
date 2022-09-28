@@ -14,20 +14,7 @@ namespace DeviceManagement_WebApp.Repository
         {
         }
 
-        public void Add(Models.Zone zone)
-        {
-            _context.Add(zone);
-        }
 
-        public void Remove(Task<Zone> zone)
-        {
-            _context.Remove(zone);
-        }
-
-        public void Update(Models.Zone zone)
-        {
-            _context.Update(zone);
-        }
     }
 
 
